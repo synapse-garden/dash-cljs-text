@@ -24,11 +24,11 @@
                                     "resources/public/script"
                                     "target"]
 
-  :ring {:handler server.handler/test-app
-         :port 3450
-         :auto-reload true
-         :stacktraces true
-         :reload-paths ["test/server"]}
+  ;:ring {:handler server.handler/test-app
+  ;       :port 3450
+  ;       :auto-reload true
+  ;       :stacktraces true
+  ;       :reload-paths ["test/server"]}
 
   :cljsbuild {
     :builds [{:id "dash"
@@ -53,4 +53,5 @@
 
   :figwheel {
              :server-port 3449
+             :ring-handler server.handler/test-app
              :css-dirs ["resources/public/css"]})

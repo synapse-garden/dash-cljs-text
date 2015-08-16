@@ -26,5 +26,5 @@
       "Mind Forker"})
 
 (defroutes test-app
-  (GET "/" [] (generate-string test-data)))
+  (GET "/test/test-data" [] (generate-string test-data)))
 ;(route/not-found "<h1>Page not found</h1>")
