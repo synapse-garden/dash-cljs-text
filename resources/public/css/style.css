@@ -1,97 +1,174 @@
+/* Color Palette
+
+  Greens:
+
+    Bright: #8ff
+    Normal: #0fc
+    Dark: #098;
+  Reds:
+    Bright: #f6a
+    Normal: #f07
+    Dark: #903
+*/
+
+
+
+/* Imports */
+@import "tests.css";
+@import "tabs.css";
+
+
+
+/****************/
+/* Main Styling */
+/****************/
+
+*{
+  -webkit-transition: all 0.1s ease;
+  outline-offset: -1px;
+}
+
 html{
-    width: 100%;
-    background: #222;
-    color: #ccc;
+  width: 100%;
+  background-color: #222;
+  color: #ccc;
 
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 1.2em;
-    letter-spacing: 1px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  background-color: #222;
+  line-height: 1.2em;
+  letter-spacing: 1px;
 
-    text-align: center;
+  text-align: center;
 }
 
 body{
-    font-size: 14px;
-    font-weight: 300;
-    color: #aaa;
-    margin: 32px;
-    text-align: left;
+  font-size: 14px;
+  font-weight: 300;
+  color: #aaa;
+  padding: 32px;
+  margin: 0px;
+  text-align: left;
+  background-position: center 1px;
 }
 
 h1 {
-    font-size: 36px;
-    font-weight: 100;
-    color: #0fc;
-    text-align: center;
-    letter-spacing: 3px;
+  font-size: 22px;
+  font-weight: 300;
+  color: #0fc;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 24px;
 }
 
 h2 {
-    font-size: 14px;
-    font-weight: 300;
-    color: #0fc;
-    text-align: left;
-    margin: -4px 0px;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #0fc;
+  text-align: left;
 }
 
 h3 {
-    font-size: 20px;
-    font-weight: 300;
-    color: #0fc;
-    letter-spacing: 2px;
-    margin: 2px 0px;
-    padding: 2px 0px;
-    text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+  color: #aaa;
+  text-align: left;
+  background-position: center 1px;
 }
 
 h4 {
-    font-size: 11px;
-    font-weight: 700;
-    text-align: center;
-    letter-spacing: 3px;
-    color: #666;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #666;
+  line-height: 1em;
+}
 
-    margin-top: -16px;
+p {
+  font-weight: 300;
+  text-align: left;
 }
 
 a {
-    color: #f0c;
+  color: #f0c;
 }
 
-div{
+div,
+canvas{
   outline: solid 1px #444;
   margin: 16px;
   padding: 16px;
+  text-align: center;
 }
+div:hover{ outline-color: #505050; }
+
+div .hidden-div{
+  margin: 0px;
+  padding: 0px;
+  outline: none;
+}
+div .nomargin-div{ margin: 0px; }
+div .nopadding-div{ padding: 0px; }
+
+div .hidden-div>div{ background: none; }
+
+#dash div{ background: #1a1a1a; }
+#dash div div{ background: #202020; }
+#dash div div div{ background: #242424; }
+#dash div div div div{ background: #2a2a2a; }
+#dash div div div div div{ background: #303030; }
 
 ::selection {
-    color: #0fc;
-    background: #999;
+  color: #0fc;
+  background: #999;
 }
 
+#dash{
+  margin: 0px;
+  padding: 32px;
+  font-weight: 100;
+  padding: 0px;
+  outline: none;
+  background: #1c1c1c;
+}
+#dash>div{
+  margin: 0px;
+}
+
+/********************/
+/* End Main Styling */
+/********************/
+
+
+
+/*****************/
+/* Input Styling */
+/*****************/
+
 input, button {
-    color: #ccc;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    letter-spacing: 2px;
-    font-weight: 300;
+  color: #ccc;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 300;
 
-    background: #111;
-    border: solid 1px #666;
-    outline: none;
-    padding: 8px;
-    margin: 16px;
-    text-align: left;
+  background: #111;
+  border: none;
+  outline: solid 1px #666;
+  padding: 8px;
+  margin: 16px;
+  text-align: left;
 
-    transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 
 input::-webkit-input-placeholder {
-    font-size: 18px;
-    color: #666;
-    font-style: italic;
+  font-size: 18px;
+  color: #666;
+  font-style: italic;
 }
 
 ul{
@@ -101,34 +178,45 @@ ul{
 }
 
 ul li input{
-    width: 1800px;
-    list-style: none;
+  width: 1800px;
+  list-style: none;
 }
 ul li button{
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 button{
-    color: #aaa;
-    background: #222;
-    margin: 2px 16px;
+  color: #aaa;
+  background: #222;
+  margin: 4px 4px;
 
-    transition-duration: 0.2s;
+  transition-duration: 0.1s;
 }
 
 button:hover, input:focus{
-    /*color: #0fc;*/
-    border: solid 1px #0fc;
+  color: #0fc;
+  outline: solid 1px #098;
 
-    transition-duration: 0.2s;
+  transition-duration: 0.1s;
+}
+button:disabled{
+  color: #555;
+  outline: 1px solid #333;
+}
+button:disabled:hover{
+  outline: 1px solid #333;
 }
 
 button:active {
-    color: #222;
-    background: #0fc;
+  color: #222;
+  background: #0fc;
 
-    transition-duration: 0.00s;
+  transition-duration: 0.00s;
 }
+
+/*********************/
+/* End Input Styling */
+/*********************/
 
 
 
@@ -188,143 +276,57 @@ button:active {
 .list-view div{
 }
 
-/*************************/
-/* Task List Styling End */
-/*************************/
+/*********************/
+/* End Input Styling */
+/*********************/
 
 
 
-/*************************/
-/* Test Specific Styling */
-/*************************/
-
-
-/* Top Level Testing Container */
-#tests{
-  padding: 0px;
-  margin: 0px;
-  background: #222;
-  outline: solid 0px #444;
-}
-
-.ns-views{
-  background: #1c1c1c;
-  padding: 16px;
-  margin: 0px;
-}
-
-#test-title{
-    color: #aaa;
-    font-size: 12px;
-    text-align: left;
-    margin: -8px 16px;
-}
-
-/* Namespace Container */
-.ns-view{
-  background: #222;
-  padding: 16px;
-  margin-bottom: 16px;
-  -webkit-column-count: auto;
-  -webkit-column-width: 400px;
-  -webkit-column-gap: 0px;
-}
-.ns-title{
-  -webkit-column-span: all;
-  color: #aaa;
-  font-size: 12px;
-  margin: 0px 8px;
-}
-
-/* Test */
-.test-name{
-  font-size: 16px;
-  text-align: left;
-  margin: 0px;
-}
-
-.test-desc{
-  font-size: 12px;
-  color: #0fc;
-  margin: 0px 0px 12px 0px;
-}
-
-.passed, .failed{
-  padding: 8px 16px;
-  margin: 8px 8px;
-  display: inline-block;
-  height: 180px;
-  width: calc(100% - 48px);
-}
-
-/* Test Report Elements */
-
-#tests ul{
-  margin-left: 0px;
-}
-
-.test-fn,
-.test-result,
-.test-should-be,
-.test-args{
-  font-size: 14px;
-  font-family: "Droid Mono", "Courier New", Courier, monospace;
-  color: #ccc;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 4px 12px;
-  margin: 2px 0px;
-  line-height: 1em;
-}
-
-
-
-/* Passing Tests */
-
-#tests .passed{
-  color: #0fc;
-  outline: solid 1px #097;
-  background: #202927;
-}
-#tests .passed .test-name{
-}
-#tests .passed .test-desc{
-}
-
-
-/* Failing Tests */
-
-#tests .failed{
-    color: #f07;
-    outline: double 4px #f07;
-    background: #2f2227;
-}
-#tests .failed .test-name{
-    font-weight: 500;
-    background: rgba(255, 0, 119, 0.1);
-}
-#tests .failed .test-desc{
-    color: #f07;
-}
-
-/*************************/
-/* Test Styling End      */
-/*************************/
-
-
+/**************************/
+/* Titlebar Styling */
+/**************************/
 
 #titlebar {
-    margin: 0px 0px 32px 0px;
-    padding: 4px;
-    background: #1c1c1c;
-    outline: solid 1px #444;
-    height: 92px;
+  margin: 0px;
+  margin-bottom: 32px;
+  padding: 5px 0px;  
+  background: #1a1a1a;
+  max-height: 64px;
+  text-align: center;
 }
 
-#dash{
-    margin: 0px;
-    padding: 0px;
-    background: none;
+#dash-title{
+  color: #0fc;
+  font-size: 28px;
+  line-height: 30px;
+  background: none;
+  -webkit-transition: all 1.0s ease;
 }
+#dash-title:hover{
+  color: #8ff;
+  text-shadow: 0px 0px 8px #0fc;
+  -webkit-transition: all 0.25s ease;
+}
+
+#powered-by{
+  color: #666;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+#version {
+  color: #444;
+  font-size: 8px;
+  line-height: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/************************/
+/* End Titlebar Styling */
+/************************/
 
 #foot{
 }
