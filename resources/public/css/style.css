@@ -1,0 +1,301 @@
+html{
+    width: 100%;
+    background: #222;
+    color: #ccc;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.2em;
+    letter-spacing: 1px;
+
+    text-align: center;
+}
+
+body{
+    font-size: 14px;
+    font-weight: 300;
+    color: #aaa;
+    margin: 0px;
+    text-align: left;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 100;
+    color: #0fc;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+h2 {
+    font-size: 14px;
+    font-weight: 300;
+    color: #0fc;
+    text-align: left;
+    margin-top: -2px;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 300;
+    color: #0fc;
+    letter-spacing: 2px;
+    margin: 2px 0px;
+    padding: 2px 0px;
+}
+
+h4 {
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 3px;
+    color: #666;
+
+    margin-top: -16px;
+}
+
+a {
+    color: #f0c;
+}
+
+div{
+  outline: solid 1px #444;
+  margin: 16px;
+  padding: 8px;
+}
+
+::selection {
+    color: #0fc;
+    background: #999;
+}
+
+input, button {
+    color: #ccc;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 300;
+
+    background: #111;
+    border: solid 1px #666;
+    outline: none;
+    padding: 8px;
+    margin: 16px;
+    text-align: left;
+
+    transition-duration: 0.2s;
+}
+
+input::-webkit-input-placeholder {
+    font-size: 18px;
+    color: #666;
+    font-style: italic;
+}
+
+ul{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+ui li input{
+    width: 1800px;
+    list-style: none;
+}
+ul li button{
+    margin-left: 10px;
+}
+
+button{
+    color: #aaa;
+    background: #222;
+    margin: 2px 16px;
+
+    transition-duration: 0.2s;
+}
+
+button:hover, input:focus{
+    /*color: #0fc;*/
+    border: solid 1px #0fc;
+
+    transition-duration: 0.2s;
+}
+
+button:active {
+    color: #222;
+    background: #0fc;
+
+    transition-duration: 0.00s;
+}
+
+
+
+/*************************/
+/* Task List Styling     */
+/*************************/
+
+#lists-view{
+  margin: 32px;
+  padding: 16px;
+  background: #1c1c1c;
+  outline: solid 1px #444;
+}
+
+#lists-view .task-completed{
+  color: #666;
+  font-style: italic;
+  text-decoration: line-through;
+}
+
+#lists-view .list-title{
+  background: #333;
+  outline: solid 1px #097;
+  padding: 4px 8px;
+}
+
+#lists-view li{
+  color: #aaa;
+  font-size: 14px;
+  background: #2c2c2c;
+  border-bottom: solid 1px #444;
+  padding: 0px 8px;
+  display: flex;
+}
+#lists-view li:hover{
+  background: #333;
+  outline: solid 1px #097;
+}
+
+#lists-view li div{
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+#lists-view li .info-date{
+  color: #888;
+  font-size: 10px;
+  text-align: right;
+  margin-left: 16px;
+}
+#lists-view li .info-timedue{
+  color: #888;
+  font-size: 10px;
+  text-align: right;
+  margin-left: 16px;
+}
+
+.list-view div{
+}
+
+/*************************/
+/* Task List Styling End */
+/*************************/
+
+
+
+/*************************/
+/* Test Specific Styling */
+/*************************/
+
+
+/* Top Level Testing Div */
+
+#tests{
+    padding: 14px;
+    margin: 32px;
+    background: #1c1c1c;
+    outline: solid 1px #444;
+}
+
+#test-title{
+    color: #aaa;
+    font-size: 24px;
+    letter-spacing: 3px;
+    text-align: center;
+    margin: 8px;
+}
+
+
+/* Passing Tests */
+
+#tests .passed{
+    padding: 16px 32px;
+    margin: 24px 32px;
+    outline: solid 1px #097;
+    background: #202927;
+}
+#tests .passed .test-name{
+    color: #0fc;
+    text-align: center;
+}
+#tests .passed .test-desc{
+    color: #0fc;
+    text-align: center;
+}
+
+
+/* Failing Tests */
+
+#tests .failed{
+    padding: 16px 32px;
+    margin: 24px 32px;
+    outline: double 4px #f07;
+    background: #2f2227;
+}
+#tests .failed .test-name{
+    color: #f07;
+    font-weight: 500;
+    text-align: center;
+    background: rgba(255, 0, 119, 0.1);
+}
+#tests .failed .test-desc{
+    color: #f07;
+    text-align: center;
+}
+
+
+/* Misc Test Report Elements */
+
+#tests ul{
+  margin-left: 0px;
+}
+#tests .test-fn{
+  font-family: "Droid Mono", "Courier New", Courier, monospace;
+  color: #ccc;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 4px;
+  margin: 4px 0px;
+  line-height: 1em;
+}
+#tests .test-args{
+  font-family: "Droid Mono", "Courier New", Courier, monospace;
+  color: #ccc;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 4px;
+  margin: 4px 0px;
+  line-height: 1em;
+}
+
+/*************************/
+/* Test Styling End      */
+/*************************/
+
+
+
+#titlebar {
+    margin: 0px 0px;
+    padding: 2px;
+    background: #111;
+    border-bottom: solid 1px #097;
+}
+
+#dash{
+    margin: 20px;
+    padding: 0px;
+    background: none;
+    border: 0px solid #222;
+}
+
+#foot{
+}

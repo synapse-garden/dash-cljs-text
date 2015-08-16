@@ -1,0 +1,31 @@
+pom.xml
+*jar
+lib/
+classes/
+resources/public/out/
+resources/public/test_out/
+resources/public/script/
+target/
+.lein-deps-sum
+.lein-repl-history
+.lein-plugins/
+
+# Swapfiles
+*.sw[op]
+
+# Compiled js
+*.js
+
+# Source maps
+*.map
+
+# NREPL
+.nrepl-port
+
+# logs
+.lein-failures
+*.log
+
+# IDEA files for Cursive
+*.iml
+.idea
