@@ -26,7 +26,7 @@
      {:nsp "dash.core"
       :tests [{:should "retrieve a test map"
                :test-fn #(-> (dash-core/fetch-updates %) :lists :Soon :tasks :Get_this_working :title)
-               :args {}
+               :args ["http://localhost:3449/test/test-data" (atom {})]
                :should-be "Get this working"
                :raw-fn '(dash.core/fetch-updates)}
              ]}
