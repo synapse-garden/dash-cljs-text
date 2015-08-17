@@ -204,7 +204,7 @@ button:active {
 #tests{
     padding: 14px;
     margin: 32px;
-    background: #1c1c1c;
+    background: #222;
     outline: solid 1px #444;
 }
 
@@ -212,46 +212,57 @@ button:active {
     color: #aaa;
     font-size: 24px;
     letter-spacing: 3px;
-    text-align: center;
+    text-align: left;
     margin: 8px;
+}
+
+.test-desc{
+  font-size: 12px;
+}
+
+.test-result,
+.test-should-be{
+  font-size: 14px;
+  color: #ccc;
+}
+
+.ns-views{
+  background: #1c1c1c;
+}
+.ns-view{
+  background: #222;
 }
 
 
 /* Passing Tests */
 
 #tests .passed{
+    color: #0fc;
     padding: 16px 32px;
     margin: 24px 32px;
     outline: solid 1px #097;
     background: #202927;
 }
 #tests .passed .test-name{
-    color: #0fc;
-    text-align: center;
 }
 #tests .passed .test-desc{
-    color: #0fc;
-    text-align: center;
 }
 
 
 /* Failing Tests */
 
 #tests .failed{
+    color: #f07;
     padding: 16px 32px;
     margin: 24px 32px;
     outline: double 4px #f07;
     background: #2f2227;
 }
 #tests .failed .test-name{
-    color: #f07;
     font-weight: 500;
-    text-align: center;
     background: rgba(255, 0, 119, 0.1);
 }
 #tests .failed .test-desc{
-    color: #f07;
-    text-align: center;
 }
 
 
@@ -286,7 +297,7 @@ button:active {
 #titlebar {
     margin: 0px 0px;
     padding: 2px;
-    background: #111;
+    background: #1c1c1c;
     border-bottom: solid 1px #097;
 }
 
