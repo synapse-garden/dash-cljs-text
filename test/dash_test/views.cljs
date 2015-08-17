@@ -34,5 +34,6 @@
   (reify
     om/IRender (render [_]
       (apply dom/div #js {:className "ns-views"}
+        (dom/h2 #js {:id "testviewTitle"} (str "Test View"))
         (om/build-all tests-view (:all-tests all-tests))
 ))))
