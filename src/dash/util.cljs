@@ -1,6 +1,7 @@
 (ns dash.util
   (:require [clojure.string :as string]
-            [cljs.reader :as reader]))
+            [cljs.reader :as reader]
+            [cognitect.transit :as transit]))
 
 (defn name-as-id [some-name]
   "Cleanse a named thing into a usable string id."
