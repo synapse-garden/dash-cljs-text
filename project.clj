@@ -13,7 +13,9 @@
                  [cheshire "5.5.0"]
                  [figwheel "0.3.7"]
                  [org.omcljs/om "0.9.0"]
-                 [cljs-ajax "0.3.14"]]
+                 [cljs-ajax "0.3.14"]
+                 [com.cognitect/transit-cljs "0.8.220"]
+                 [com.cognitect/transit-clj "0.8.281"]]
 
   :plugins [[lein-cljsbuild "1.0.6"]
             [lein-figwheel "0.3.7"]
@@ -23,12 +25,6 @@
                                     "resources/public/test_out"
                                     "resources/public/script"
                                     "target"]
-
-  ;:ring {:handler server.handler/test-app
-  ;       :port 3450
-  ;       :auto-reload true
-  ;       :stacktraces true
-  ;       :reload-paths ["test/server"]}
 
   :cljsbuild {
     :builds [{:id "dash"
@@ -55,3 +51,5 @@
              :server-port 3449
              :ring-handler server.handler/test-app
              :css-dirs ["resources/public/css"]})
+
+; http://swannodette.github.io/2014/07/26/transit--clojurescript/
