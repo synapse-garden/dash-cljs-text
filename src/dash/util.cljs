@@ -1,7 +1,6 @@
 (ns dash.util
   (:require [clojure.string :as string]
-            [cljs.reader :as reader]
-            [cognitect.transit :as transit]))
+            [cljs.reader :as reader]))
 
 (defn name-as-id [some-name]
   "Cleanse a named thing into a usable string id."
@@ -18,7 +17,3 @@
       (if-not (= (:id some-object kw-name))
         (assoc some-object :id kw-name)
         some-object))))
-
-(defn untrans [x]
-  (let [r (transit/reader :json)]
-    (transit/read r x)))
