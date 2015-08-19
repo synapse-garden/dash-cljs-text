@@ -16,7 +16,7 @@ body{
     font-size: 14px;
     font-weight: 300;
     color: #aaa;
-    margin: 0px;
+    margin: 32px;
     text-align: left;
 }
 
@@ -63,7 +63,7 @@ a {
 div{
   outline: solid 1px #444;
   margin: 16px;
-  padding: 8px;
+  padding: 16px;
 }
 
 ::selection {
@@ -137,8 +137,7 @@ button:active {
 /*************************/
 
 #lists-view{
-  margin: 32px;
-  padding: 16px;
+  padding: 32px;
   background: #1c1c1c;
   outline: solid 1px #444;
 }
@@ -200,9 +199,9 @@ button:active {
 /*************************/
 
 
-/* Top Level Testing Div */
+/* Top Level Testing Container */
 #tests{
-  padding: 16px;
+  padding: 0px;
   margin: 0px;
   background: #222;
   outline: solid 0px #444;
@@ -211,21 +210,26 @@ button:active {
 .ns-views{
   background: #1c1c1c;
   padding: 16px;
+  margin: 0px;
 }
+
+/* Namespace Container */
 .ns-view{
   background: #222;
-  margin: 16px;
   padding: 16px;
+  margin-bottom: 16px;
   -webkit-column-count: auto;
   -webkit-column-width: 400px;
+  -webkit-column-gap: 0px;
 }
 .ns-title{
   -webkit-column-span: all;
   color: #aaa;
   font-size: 12px;
-  margin: 4px 0px;
+  margin: 0px 8px;
 }
 
+/* Test */
 .test-name{
   font-size: 16px;
   text-align: left;
@@ -235,41 +239,42 @@ button:active {
 .test-desc{
   font-size: 12px;
   color: #0fc;
-  margin: 4px 0px;
+  margin: 0px 0px 12px 0px;
 }
 
 .passed, .failed{
-  padding: 16px;
+  padding: 8px 16px;
   margin: 8px 8px;
   display: inline-block;
-  height: 200px;
-  width: 92%;
+  height: 180px;
 }
 
 #test-title{
     color: #aaa;
-    font-size: 24px;
-    letter-spacing: 3px;
+    font-size: 12px;
     text-align: left;
-    margin: 8px;
+    margin: -8px 16px;
 }
 
-.test-desc{
-  font-size: 12px;
+/* Test Report Elements */
+
+#tests ul{
+  margin-left: 0px;
 }
 
+.test-fn,
 .test-result,
-.test-should-be{
+.test-should-be,
+.test-args{
   font-size: 14px;
+  font-family: "Droid Mono", "Courier New", Courier, monospace;
   color: #ccc;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 12px;
+  margin: 2px 0px;
+  line-height: 1em;
 }
 
-.ns-views{
-  background: #1c1c1c;
-}
-.ns-view{
-  background: #222;
-}
 
 
 /* Passing Tests */
@@ -300,25 +305,6 @@ button:active {
     color: #f07;
 }
 
-
-/* Misc Test Report Elements */
-
-#tests ul{
-  margin-left: 0px;
-}
-
-.test-fn,
-.test-result,
-.test-should-be,
-.test-args{
-  font-family: "Droid Mono", "Courier New", Courier, monospace;
-  color: #ccc;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 4px 12px;
-  margin: 2px 0px;
-  line-height: 1em;
-}
-
 /*************************/
 /* Test Styling End      */
 /*************************/
@@ -326,17 +312,17 @@ button:active {
 
 
 #titlebar {
-    margin: 0px 0px;
-    padding: 2px;
+    margin: 0px 0px 32px 0px;
+    padding: 4px;
     background: #1c1c1c;
-    border-bottom: solid 1px #097;
+    outline: solid 1px #444;
+    height: 92px;
 }
 
 #dash{
-    margin: 20px;
+    margin: 0px;
     padding: 0px;
     background: none;
-    border: 0px solid #222;
 }
 
 #foot{
