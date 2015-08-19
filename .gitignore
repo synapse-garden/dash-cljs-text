@@ -30,10 +30,5 @@ target/
 *.iml
 .idea
 
-<<<<<<< HEAD
-# Sublime projects and workspaces
-sublimetext/
-=======
 # Sublime Project Files
 sublimetext/
->>>>>>> 02db4809db3b645c767c19bac1300944d0f536e6
