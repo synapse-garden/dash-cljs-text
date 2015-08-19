@@ -25,7 +25,3 @@
       (if (= (alength (to-array words)) 1)
         nil
         (first (last words))))))
-
-(defn lerp [a b x]
-  "Linear interpolation between two values"
-  (+ a (* x (- b a))))

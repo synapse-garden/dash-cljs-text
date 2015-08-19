@@ -21,12 +21,6 @@
                :args ["Kevin Weber" "Bodie Solomon" "SingleWord" "Way more than two words"]
                :should-be ["KW" "BS" "S" "WW"]
                :raw-fn '(dash-util/abbreviate)}
-
-              {:should "linearly interpolate a value between two values"
-               :test-fn #(mapv dash-util/lerp %)
-               :args [[0 1 0.5] [8 12 0.75] [0 100 0.33] [-10 -20 0.5] [20 10 0.25] [50 100 -0.5]]
-               :should-be [0.5 11 33 -15 15 25]
-               :raw-fn '(dash.util/lerp)}
              ]}
 
      {:nsp "dash.core"
