@@ -213,6 +213,13 @@ button:active {
   margin: 0px;
 }
 
+#test-title{
+    color: #aaa;
+    font-size: 12px;
+    text-align: left;
+    margin: -8px 16px;
+}
+
 /* Namespace Container */
 .ns-view{
   background: #222;
@@ -247,13 +254,7 @@ button:active {
   margin: 8px 8px;
   display: inline-block;
   height: 180px;
-}
-
-#test-title{
-    color: #aaa;
-    font-size: 12px;
-    text-align: left;
-    margin: -8px 16px;
+  width: calc(100% - 48px);
 }
 
 /* Test Report Elements */
