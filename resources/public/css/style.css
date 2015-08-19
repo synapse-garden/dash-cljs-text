@@ -33,17 +33,16 @@ h2 {
     font-weight: 300;
     color: #0fc;
     text-align: left;
-    margin: -4px 0px;
+    margin-top: -2px;
 }
 
 h3 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300;
     color: #0fc;
     letter-spacing: 2px;
     margin: 2px 0px;
     padding: 2px 0px;
-    text-align: center;
 }
 
 h4 {
@@ -100,7 +99,7 @@ ul{
   list-style: none;
 }
 
-ul li input{
+ui li input{
     width: 1800px;
     list-style: none;
 }
@@ -201,49 +200,12 @@ button:active {
 
 
 /* Top Level Testing Div */
+
 #tests{
-  padding: 16px;
-  margin: 0px;
-  background: #222;
-  outline: solid 0px #444;
-}
-
-.ns-views{
-  background: #1c1c1c;
-  padding: 16px;
-}
-.ns-view{
-  background: #222;
-  margin: 16px;
-  padding: 16px;
-  -webkit-column-count: auto;
-  -webkit-column-width: 400px;
-}
-.ns-title{
-  -webkit-column-span: all;
-  color: #aaa;
-  font-size: 12px;
-  margin: 4px 0px;
-}
-
-.test-name{
-  font-size: 16px;
-  text-align: left;
-  margin: 0px;
-}
-
-.test-desc{
-  font-size: 12px;
-  color: #0fc;
-  margin: 4px 0px;
-}
-
-.passed, .failed{
-  padding: 16px;
-  margin: 8px 8px;
-  display: inline-block;
-  height: 160px;
-  width: 90%;
+    padding: 14px;
+    margin: 32px;
+    background: #222;
+    outline: solid 1px #444;
 }
 
 #test-title{
@@ -275,9 +237,11 @@ button:active {
 /* Passing Tests */
 
 #tests .passed{
-  color: #0fc;
-  outline: solid 1px #097;
-  background: #202927;
+    color: #0fc;
+    padding: 16px 32px;
+    margin: 24px 32px;
+    outline: solid 1px #097;
+    background: #202927;
 }
 #tests .passed .test-name{
 }
@@ -289,6 +253,8 @@ button:active {
 
 #tests .failed{
     color: #f07;
+    padding: 16px 32px;
+    margin: 24px 32px;
     outline: double 4px #f07;
     background: #2f2227;
 }
@@ -297,7 +263,6 @@ button:active {
     background: rgba(255, 0, 119, 0.1);
 }
 #tests .failed .test-desc{
-    color: #f07;
 }
 
 
@@ -306,16 +271,20 @@ button:active {
 #tests ul{
   margin-left: 0px;
 }
-
-.test-fn,
-.test-result,
-.test-should-be,
-.test-args{
+#tests .test-fn{
   font-family: "Droid Mono", "Courier New", Courier, monospace;
   color: #ccc;
   background: rgba(255, 255, 255, 0.1);
-  padding: 4px 12px;
-  margin: 2px 0px;
+  padding: 4px 4px;
+  margin: 4px 0px;
+  line-height: 1em;
+}
+#tests .test-args{
+  font-family: "Droid Mono", "Courier New", Courier, monospace;
+  color: #ccc;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 4px;
+  margin: 4px 0px;
   line-height: 1em;
 }
 
