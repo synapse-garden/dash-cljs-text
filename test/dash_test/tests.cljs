@@ -35,5 +35,11 @@
                :args {}
                :should-be "Get this working"
                :raw-fn '(dash.core/fetch-updates)}
+
+              {:should "return false given 'nil' and 'false' and true given anything else"
+               :test-fn #(mapv boolean %)
+               :args [false nil 0 1 3.1415 "a"]
+               :should-be [false false true true true true]
+               :raw-fn '(dash.core/bool-check)}
              ]}
     ])

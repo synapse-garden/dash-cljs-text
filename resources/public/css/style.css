@@ -246,6 +246,31 @@ button:active {
   width: 90%;
 }
 
+#test-title{
+    color: #aaa;
+    font-size: 24px;
+    letter-spacing: 3px;
+    text-align: left;
+    margin: 8px;
+}
+
+.test-desc{
+  font-size: 12px;
+}
+
+.test-result,
+.test-should-be{
+  font-size: 14px;
+  color: #ccc;
+}
+
+.ns-views{
+  background: #1c1c1c;
+}
+.ns-view{
+  background: #222;
+}
+
 
 /* Passing Tests */
 
@@ -268,7 +293,6 @@ button:active {
     background: #2f2227;
 }
 #tests .failed .test-name{
-    color: #f07;
     font-weight: 500;
     background: rgba(255, 0, 119, 0.1);
 }
