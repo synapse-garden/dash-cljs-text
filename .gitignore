@@ -29,3 +29,6 @@ target/
 # IDEA files for Cursive
 *.iml
 .idea
+
+# Sublime projects and workspaces
+sublimetext/

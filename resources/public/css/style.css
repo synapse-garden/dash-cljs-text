@@ -33,16 +33,17 @@ h2 {
     font-weight: 300;
     color: #0fc;
     text-align: left;
-    margin-top: -2px;
+    margin: -4px 0px;
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 300;
     color: #0fc;
     letter-spacing: 2px;
     margin: 2px 0px;
     padding: 2px 0px;
+    text-align: center;
 }
 
 h4 {
@@ -99,7 +100,7 @@ ul{
   list-style: none;
 }
 
-ui li input{
+ul li input{
     width: 1800px;
     list-style: none;
 }
@@ -200,58 +201,79 @@ button:active {
 
 
 /* Top Level Testing Div */
-
 #tests{
-    padding: 14px;
-    margin: 32px;
-    background: #1c1c1c;
-    outline: solid 1px #444;
+  padding: 16px;
+  margin: 0px;
+  background: #222;
+  outline: solid 0px #444;
 }
 
-#test-title{
-    color: #aaa;
-    font-size: 24px;
-    letter-spacing: 3px;
-    text-align: center;
-    margin: 8px;
+.ns-views{
+  background: #1c1c1c;
+  padding: 16px;
+}
+.ns-view{
+  background: #222;
+  margin: 16px;
+  padding: 16px;
+  -webkit-column-count: auto;
+  -webkit-column-width: 400px;
+}
+.ns-title{
+  -webkit-column-span: all;
+  color: #aaa;
+  font-size: 12px;
+  margin: 4px 0px;
+}
+
+.test-name{
+  font-size: 16px;
+  text-align: left;
+  margin: 0px;
+}
+
+.test-desc{
+  font-size: 12px;
+  color: #0fc;
+  margin: 4px 0px;
+}
+
+.passed, .failed{
+  padding: 16px;
+  margin: 8px 8px;
+  display: inline-block;
+  height: 160px;
+  width: 90%;
 }
 
 
 /* Passing Tests */
 
 #tests .passed{
-    padding: 16px 32px;
-    margin: 24px 32px;
-    outline: solid 1px #097;
-    background: #202927;
+  color: #0fc;
+  outline: solid 1px #097;
+  background: #202927;
 }
 #tests .passed .test-name{
-    color: #0fc;
-    text-align: center;
 }
 #tests .passed .test-desc{
-    color: #0fc;
-    text-align: center;
 }
 
 
 /* Failing Tests */
 
 #tests .failed{
-    padding: 16px 32px;
-    margin: 24px 32px;
+    color: #f07;
     outline: double 4px #f07;
     background: #2f2227;
 }
 #tests .failed .test-name{
     color: #f07;
     font-weight: 500;
-    text-align: center;
     background: rgba(255, 0, 119, 0.1);
 }
 #tests .failed .test-desc{
     color: #f07;
-    text-align: center;
 }
 
 
@@ -260,20 +282,16 @@ button:active {
 #tests ul{
   margin-left: 0px;
 }
-#tests .test-fn{
+
+.test-fn,
+.test-result,
+.test-should-be,
+.test-args{
   font-family: "Droid Mono", "Courier New", Courier, monospace;
   color: #ccc;
   background: rgba(255, 255, 255, 0.1);
-  padding: 4px 4px;
-  margin: 4px 0px;
-  line-height: 1em;
-}
-#tests .test-args{
-  font-family: "Droid Mono", "Courier New", Courier, monospace;
-  color: #ccc;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 4px 4px;
-  margin: 4px 0px;
+  padding: 4px 12px;
+  margin: 2px 0px;
   line-height: 1em;
 }
 
@@ -286,7 +304,7 @@ button:active {
 #titlebar {
     margin: 0px 0px;
     padding: 2px;
-    background: #111;
+    background: #1c1c1c;
     border-bottom: solid 1px #097;
 }
 
