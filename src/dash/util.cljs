@@ -18,7 +18,7 @@
         some-object))))
 
 (defn abbreviate [some-name]
-  "Takes the first letter of each word and makes a new word out of it"
+  "Makes a two-letter uppercase string out of a name"
   (let [words (string/split (string/trim (string/upper-case some-name)) #"\s+")]
     (str
       (ffirst words)
