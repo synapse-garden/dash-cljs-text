@@ -33,7 +33,7 @@
     om/IRender (render [_]
       (let [{:keys [nsp tests]} nsp-tests]
         (dom/div #js {:id (str "tests-" nsp) :className "ns-view"}
-          (dom/h2 #js {:className "ns-title"} (str nsp " Tests"))
+          (dom/h2 #js {:className "ns-title"} (str nsp ""))
           (apply dom/ul nil
             (om/build-all test-view tests)))))))
 
