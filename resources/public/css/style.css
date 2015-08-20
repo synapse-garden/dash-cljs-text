@@ -300,10 +300,11 @@ button:active {
 }
 #tests .failed .test-name{
   font-weight: 500;
+  color: #f07;
   background: rgba(255, 0, 119, 0.1);
 }
 #tests .failed .test-desc{
-    color: #f07;
+  color: #f07;
 }
 
 /*************************/
