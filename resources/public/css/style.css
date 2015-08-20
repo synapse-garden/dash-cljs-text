@@ -24,12 +24,22 @@
 
 html{
   width: 100%;
+<<<<<<< HEAD
   background-color: #222;
   color: #ccc;
 
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: 14px;
+=======
+  background: #222;
+  color: #ccc;
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.2em;
+>>>>>>> WIP HTTP GET -- now fetches and swaps atom state
   letter-spacing: 1px;
 
   text-align: center;
@@ -39,6 +49,7 @@ body{
   font-size: 14px;
   font-weight: 300;
   color: #aaa;
+<<<<<<< HEAD
   padding: 32px;
   margin: 0px;
   text-align: left;
@@ -66,6 +77,35 @@ h3 {
   font-size: 14px;
   font-weight: 300;
   color: #aaa;
+=======
+  margin: 32px;
+  text-align: left;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 100;
+  color: #0fc;
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+h2 {
+  font-size: 14px;
+  font-weight: 300;
+  color: #0fc;
+  text-align: left;
+  margin: -4px 0px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 300;
+  color: #0fc;
+  letter-spacing: 2px;
+  margin: 2px 0px;
+  padding: 2px 0px;
+>>>>>>> WIP HTTP GET -- now fetches and swaps atom state
   text-align: center;
 }
 
@@ -75,11 +115,16 @@ h4 {
   text-align: center;
   letter-spacing: 2px;
   color: #666;
+<<<<<<< HEAD
   line-height: 1em;
 }
 
 p {
   font-weight: 300;
+=======
+
+  margin-top: -12px;
+>>>>>>> WIP HTTP GET -- now fetches and swaps atom state
 }
 
 a {
@@ -116,6 +161,7 @@ div>div>div>div>div>div{ background: #222; }*/
 ::selection {
   color: #0fc;
   background: #999;
+<<<<<<< HEAD
 }
 
 #dash{
@@ -128,6 +174,8 @@ div>div>div>div>div>div{ background: #222; }*/
 }
 #dash>div{
   margin: 0px;
+=======
+>>>>>>> WIP HTTP GET -- now fetches and swaps atom state
 }
 
 /********************/
@@ -142,14 +190,23 @@ div>div>div>div>div>div{ background: #222; }*/
 
 input, button {
   color: #ccc;
+<<<<<<< HEAD
   font-family: 'Open Sans', sans-serif;
+=======
+  font-family: 'Roboto', sans-serif;
+>>>>>>> WIP HTTP GET -- now fetches and swaps atom state
   font-size: 14px;
   letter-spacing: 2px;
   font-weight: 300;
 
   background: #111;
+<<<<<<< HEAD
   border: none;
   outline: solid 1px #666;
+=======
+  border: solid 1px #666;
+  outline: none;
+>>>>>>> WIP HTTP GET -- now fetches and swaps atom state
   padding: 8px;
   margin: 16px;
   text-align: left;
@@ -180,12 +237,17 @@ ul li button{
 button{
   color: #aaa;
   background: #222;
+<<<<<<< HEAD
   margin: 4px 4px;
+=======
+  margin: 2px 16px;
+>>>>>>> WIP HTTP GET -- now fetches and swaps atom state
 
   transition-duration: 0.2s;
 }
 
 button:hover, input:focus{
+<<<<<<< HEAD
   color: #0fc;
   outline: solid 1px #098;
 
@@ -197,6 +259,12 @@ button:disabled{
 }
 button:disabled:hover{
   outline: 1px solid #333;
+=======
+  /*color: #0fc;*/
+  border: solid 1px #0fc;
+
+  transition-duration: 0.2s;
+>>>>>>> WIP HTTP GET -- now fetches and swaps atom state
 }
 
 button:active {

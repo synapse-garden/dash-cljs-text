@@ -34,7 +34,6 @@
   "test-view renders a single test div with class 'passed or 'failed."
   (reify
     om/IRender (render [_]
-
       (om/build no-cursor-test test-case))))
 
 (defn tests-view [nsp-tests owner]
