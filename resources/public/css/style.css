@@ -218,10 +218,12 @@ button:active {
 
 #test-title{
   color: #aaa;
+  background: #222;
   font-size: 12px;
   letter-spacing: 1px;
   text-align: left;
-  margin: -8px 16px;
+  margin: 0px 16px;
+  padding: 0px 16px;
   -webkit-column-span: all;
 }
 
@@ -231,54 +233,52 @@ button:active {
   padding: 16px;
   margin: 16px;
   display: inline-block;
+  width: calc(100% - 64px);
 }
 .ns-title{
   color: #aaa;
   font-size: 12px;
-  margin: 0px 8px;
+  margin: 0px;
+  margin-bottom: 2px;
+  padding: 0px 16px;
+  background: #2c2c2c;
 }
 
-/* Test */
+/* Tests */
 .test-name{
-  font-size: 12px;
-  font-weight: 800;
-  line-height: 12px;
   text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0fc;
+  width: calc(100% - 48px);
   margin: 0px 0px;
+  padding: 2px 0px;
+  line-height: 12px;
 }
 
 .test-desc{
+  text-align: left;
   font-size: 11px;
   font-weight: 300;
   color: #0fc;
-  margin: -4px 0px 4px 0px;
+  width: calc(100% - 48px);
+  margin: 1px 0px;
+  padding: 2px 0px;
+  line-height: 12px;
+}
+
+.status-image{
+  float: right;
+  margin-top: -34px;
+  margin-right: 0px;
 }
 
 .passed, .failed{
-  padding: 8px 16px;
-  margin: 8px 8px;
+  padding: 4px 16px;
+  margin: 4px 0px;
   display: inline-block;
   /*height: 180px;*/
-  width: calc(100% - 48px);
-}
-
-/* Test Report Elements */
-
-#tests ul{
-  margin-left: 0px;
-}
-
-.test-fn,
-.test-result,
-.test-should-be,
-.test-args{
-  font-size: 12px;
-  font-family: "Droid Mono", "Courier New", Courier, monospace;
-  color: #ccc;
-  background: rgba(255, 255, 255, 0.06);
-  padding: 4px 0px;
-  margin: 2px 0px;
-  line-height: 1em;
+  width: calc(100% - 32px);
 }
 
 
@@ -291,15 +291,17 @@ button:active {
   background: #202927;
   height: 32px;
 }
+#tests .passed:hover{ outline-color: #0fc;}
+
 #tests .passed .test-name{
-}
-#tests .passed .test-desc{
+  background: rgba(0, 255, 204, 0.1);
 }
 
-.passed .test-fn,
-.passed .test-result,
-.passed .test-should-be,
-.passed .test-args{
+#tests .passed .test-desc{
+  background: rgba(0, 255, 204, 0.1);
+}
+
+.passed .test-row{
   display: none;
 }
 
@@ -311,14 +313,47 @@ button:active {
   outline: double 4px #f07;
   background: #2f2227;
 }
+#tests .failed:hover{ outline-color: #f8c;}
+
 #tests .failed .test-name{
   font-weight: 500;
   color: #f07;
   background: rgba(255, 0, 119, 0.1);
 }
+
 #tests .failed .test-desc{
   color: #f07;
+  background: rgba(255, 0, 119, 0.1);
 }
+
+/* Test Report Elements */
+.test-table{
+  width: 100%;
+  border-spacing: 1px;
+  margin: -1px;
+  margin-top: 3px;
+}
+
+.test-row,
+.test-row-title,
+.test-row-data{
+  font-size: 11px;
+  font-family: "Droid Mono", "Courier New", Courier, monospace;
+  letter-spacing: 0px;
+  color: #ccc;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 2px 4px;
+  margin: 4px 0px;
+  width: auto;
+}
+.test-row:hover{
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.test-row-title{ width: 72px;}
+.test-row-data{ width: auto;}
+
+
 
 /*************************/
 /* Test Styling End      */
