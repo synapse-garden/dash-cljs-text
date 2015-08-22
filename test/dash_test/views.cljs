@@ -9,21 +9,32 @@
       (let [{:keys [id should test-fn should-be raw-fn args]} test-case
             results (util/run-test! test-fn args)]
         (dom/div
-         (if (= should-be results)
-           #js {:className "passed"}
-           #js {:className "failed"})
-         (dom/h3 #js {:className "test-name"} (str "Test " id))
-         (dom/h2 #js {:className "test-desc"} (str raw-fn " should " should))
-         (dom/ul nil
-          ;(dom/li #js {:className "test-fn"} (str "Tests " raw-fn))
-           (if args (dom/li #js {:className "test-args"} (str "Input — " args)) "")
-           (dom/li #js {:className "test-result"} (str "Output — " results))
-           (dom/li #js {:className "test-should-be"} (str "Expected Output — " should-be))))))))
+        (if (= should-be results)
+          #js {:className "passed"}
+          #js {:className "failed"})
+        (dom/h3 #js {:className "test-name"} (str "Test " id " — " raw-fn))
+          (dom/h2 #js {:className "test-desc"} (str "Should " should))
+          (dom/img (if (= should-be (test-fn args))
+            #js {:src "img/check.png" :className "status-image"}
+            #js {:src "img/x.png" :className "status-image"}))
+
+        (dom/table #js {:className "test-table"}
+          (if args 
+          (dom/tr #js {:className "test-row"}
+           (dom/td #js {:className "test-row-title"} "Input")
+           (dom/td #js {:className "test-row-data"} args)))
+          (dom/tr #js {:className "test-row"}
+           (dom/td #js {:className "test-row-title"} "Output")
+           (dom/td #js {:className "test-row-data"} (test-fn args)))
+          (dom/tr #js {:className "test-row"}
+           (dom/td #js {:className "test-row-title"} "Expected")
+           (dom/td #js {:className "test-row-data"} should-be))))))))
 
 (defn test-view [test-case owner]
   "test-view renders a single test div with class 'passed or 'failed."
   (reify
     om/IRender (render [_]
+
       (om/build no-cursor-test test-case))))
 
 (defn tests-view [nsp-tests owner]
