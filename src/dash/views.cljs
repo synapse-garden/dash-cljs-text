@@ -5,34 +5,6 @@
             [dash.core :as core]
             ))
 
-(defn view-a [cursor]
-  (reify om/IRender (render [_]
-    (dom/div #js {:className "hidden-div"}
-      (dom/h1 nil "This is View A")
-      (dom/p nil "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-      ))))
-
-(defn view-b [cursor]
-  (reify om/IRender (render [_]
-    (dom/div #js {:className "hidden-div"}
-      (dom/h1 nil "This is View B")
-      (dom/p nil "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
-      ))))
-
-(defn view-c [cursor]
-  (reify om/IRender (render [_]
-    (dom/div #js {:className "hidden-div"}
-      (dom/h1 nil "This is View C")
-      (dom/p nil "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC")
-      ))))
-
-(defn view-d [cursor]
-  (reify om/IRender (render [_]
-    (dom/div #js {:className "hidden-div"}
-      (dom/h1 nil "This is View D")
-      (dom/p nil "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD")
-      ))))
-
 (defn tab-view [cursor]
   (reify om/IRender (render [_]
     (let [cur-view (first (:current-tab cursor))
