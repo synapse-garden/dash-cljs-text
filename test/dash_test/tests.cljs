@@ -22,13 +22,29 @@
                :args ["Kevin Weber" "Bodie Solomon" "SingleWord" "Way more than two words"]
                :should-be ["KW" "BS" "S" "WW"]
                :raw-fn '(dash-util/abbreviate)}
+
+              {:should "construct a URI given a root and a path"
+               :test-fn #(mapv (fn [v] (apply dash-util/uri v)) %)
+               :args [["http://foo.com/" "bar"]
+                      ["http://bar.com/" "foo"]]
+               :should-be ["http://foo.com/bar"
+                           "http://bar.com/foo"]
+               :raw-fn '(dash.util/uri)}
              ]}
 
      {:nsp "dash.core"
       :tests [{:should "retrieve a test map"
-               :test-fn (fn [v] (dash-core/fetch-updates (first v) (second v)) @(second v));uri state) state);#(-> (dash-core/fetch-updates %) :lists :Soon :tasks :Get_this_working :title)
-               :args ["http://localhost:3449/test/test-data" (atom {})]
-               :should-be "Get this working"
-               :raw-fn '(dash.core/fetch-updates)}
+               :test-fn #(mapv (fn [v] (apply dash-core/fetch-updates! v)) %)
+               :args [["http://localhost:3449/test/test-data" (atom {})]
+                      ["http://localhost:3449/test/test-data" (atom {:foo "bar"})]]
+               :should-be ["Get this working"
+                           "Something else"]
+               :raw-fn '(dash.core/fetch-updates!)}
+
+              {:should "return false given 'nil' and 'false' and true given anything else"
+               :test-fn #(mapv boolean %)
+               :args [false nil 0 1 3.1415 "a"]
+               :should-be [false false true true true true]
+               :raw-fn '(dash.core/bool-check)}
              ]}
-    ])
+     ])

@@ -27,3 +27,6 @@
         nil
         (first (last words))))))
 
+(defn uri [root path]
+  "Construct a URI given a root and path"
+  (str root path))

@@ -18,16 +18,19 @@
   "Insert or update a task in the given atom."
   (upsert-item state task :lists))
 
-(defn ok-handler [state]
+(defn update! [state]
   (fn [result]
-    (reset! state result)))
+    (do
+      (.log js/console state result)
+      (reset! state result)
+      (.log js/console state result))))
 
 (defn error-handler [{:keys [status status-text]}]
     (.log js/console (str "http request error: " status " " status-text)))
 
-(defn fetch-updates [uri state]
+(defn fetch-updates! [uri state]
   "Return the map with any pending updates applied."
     (GET uri
-         :handler (ok-handler state)
+         :handler (update! state)
          :response-format (ajax/transit-response-format)
          :error-handler error-handler))
