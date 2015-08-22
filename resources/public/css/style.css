@@ -211,26 +211,28 @@ button:active {
   background: #1c1c1c;
   padding: 16px;
   margin: 0px;
+  -webkit-column-count: auto;
+  -webkit-column-width: 512px;
+  -webkit-column-gap: 0px;
 }
 
 #test-title{
   color: #aaa;
   font-size: 12px;
+  letter-spacing: 1px;
   text-align: left;
   margin: -8px 16px;
+  -webkit-column-span: all;
 }
 
 /* Namespace Container */
 .ns-view{
   background: #222;
   padding: 16px;
-  margin-bottom: 16px;
-  -webkit-column-count: auto;
-  -webkit-column-width: 400px;
-  -webkit-column-gap: 0px;
+  margin: 16px;
+  display: inline-block;
 }
 .ns-title{
-  -webkit-column-span: all;
   color: #aaa;
   font-size: 12px;
   margin: 0px 8px;
@@ -238,22 +240,25 @@ button:active {
 
 /* Test */
 .test-name{
-  font-size: 16px;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 12px;
   text-align: left;
-  margin: 0px;
+  margin: 0px 0px;
 }
 
 .test-desc{
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: 300;
   color: #0fc;
-  margin: 0px 0px 12px 0px;
+  margin: -4px 0px 4px 0px;
 }
 
 .passed, .failed{
   padding: 8px 16px;
   margin: 8px 8px;
   display: inline-block;
-  height: 180px;
+  /*height: 180px;*/
   width: calc(100% - 48px);
 }
 
@@ -267,11 +272,11 @@ button:active {
 .test-result,
 .test-should-be,
 .test-args{
-  font-size: 14px;
+  font-size: 12px;
   font-family: "Droid Mono", "Courier New", Courier, monospace;
   color: #ccc;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 4px 0px;
   margin: 2px 0px;
   line-height: 1em;
 }
@@ -284,10 +289,18 @@ button:active {
   color: #0fc;
   outline: solid 1px #097;
   background: #202927;
+  height: 32px;
 }
 #tests .passed .test-name{
 }
 #tests .passed .test-desc{
+}
+
+.passed .test-fn,
+.passed .test-result,
+.passed .test-should-be,
+.passed .test-args{
+  display: none;
 }
 
 
