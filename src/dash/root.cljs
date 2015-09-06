@@ -2,17 +2,11 @@
   (:require [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
             [dash.views :as dash-views]
-            [dash.core :as dash-core]
-            [figwheel.client :as fw]))
+            [dash.core :as dash-core]))
 
 (enable-console-print!)
 
-(def app-state (atom {:reload-count 0}))
-
-(fw/start {
-  :on-jsload (fn [] (do (swap! app-state #(assoc % :reload-count (inc (:reload-count %))))
-                        (println "refresh: " (:reload-count @app-state))))
-  :build-id "dash"})
+(defonce app-state (atom {:reload-count 0}))
 
 (om/root
  dash-views/lists-view
