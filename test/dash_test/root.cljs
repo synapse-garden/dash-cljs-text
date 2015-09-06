@@ -8,6 +8,8 @@
 
 (defonce test-state (atom {}))
 
+(dash-core/refresh-tests! test-state)
+
 (om/root
   dash-views/ns-tests-view
   test-state
