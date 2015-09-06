@@ -8,6 +8,8 @@
 
 (defonce app-state (atom {:reload-count 0}))
 
+(swap! app-state #(assoc % :reload-count (inc (:reload-count %))))
+
 (om/root
  dash-views/lists-view
  app-state
