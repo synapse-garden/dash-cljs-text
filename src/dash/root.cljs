@@ -18,4 +18,5 @@
  {:target (. js/document (getElementById "dash"))})
 
 ;(swap! app-state #((dash-core/fetch-updates "http://localhost:3449/test/test-data" %)))
-(swap! app-state #(dash-core/fetch-updates (util/uri "test-data" backend) %))
+(dash-core/fetch-updates! (util/uri backend "test-data") app-state)
+; (swap! app-state #(dash-core/fetch-updates! (util/uri backend "test-data") %))

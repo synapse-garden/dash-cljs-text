@@ -18,14 +18,14 @@
   "Insert or update a task in the given atom."
   (upsert-item state task :lists))
 
-(defn update! [state]
+(defn- update! [state]
   (fn [result]
     (do
       (.log js/console state result)
       (reset! state result)
       (.log js/console state result))))
 
-(defn error-handler [{:keys [status status-text]}]
+(defn- err [{:keys [status status-text]}]
     (.log js/console (str "http request error: " status " " status-text)))
 
 (defn fetch-updates! [uri state]
@@ -33,4 +33,4 @@
     (GET uri
          :handler (update! state)
          :response-format (ajax/transit-response-format)
-         :error-handler error-handler))
+         :error-handler err))
