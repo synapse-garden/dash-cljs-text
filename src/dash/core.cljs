@@ -20,10 +20,7 @@
 
 (defn- update! [state]
   (fn [result]
-    (do
-      (.log js/console state result)
-      (reset! state result)
-      (.log js/console state result))))
+    (reset! state result)))
 
 (defn- err [{:keys [status status-text]}]
     (.log js/console (str "http request error: " status " " status-text)))
