@@ -19,6 +19,7 @@
   "Insert or update a task in the given atom."
   (upsert-item state task :lists))
 
+<<<<<<< HEAD
 (defn- update! [state korks]
   (fn [result]
     (om/transact! state korks (fn [_] result))))
@@ -28,6 +29,14 @@
     (.log js/console "http request error: ")
     (.log js/console "    status: " status-text)
     (js/alert (str "HTTP request error: " status-text))))
+=======
+(defn upsert-view [state new-view]
+  "Change the view of the given atom"
+  ;(swap! state #(assoc % :view new-view))
+  (swap! state assoc :view [new-view])
+  ;(upsert-item state new-view :view)
+  )
+>>>>>>> Tweaked views
 
 (defn ok-handler [state]
   (fn [result]
