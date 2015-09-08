@@ -5,6 +5,8 @@
             [dash.core :as core]
             ))
 
+(def view {:cur-view 0})
+
 (defn view-switcher [state]
   (reify om/IRender (render [_]
     (let [current-view (:view state)]
