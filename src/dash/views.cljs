@@ -40,14 +40,6 @@
       (om/build view-switcher (:view cursor))
       ))))
 
-(defn simple-view [cursor]
-  (reify om/IRender (render [_]
-    (dom/div nil
-      (dom/h1 nil "Simple Cursor Test View")
-      (dom/p nil (str "I am attempting to retrieve a value from the atom via cursors.
-                      The value I'm expecting is 0. The value I find is " (get-in cursor [:view 0]) "."))
-    ))))
-
 (defn views-view [cursor owner] ;META
   (reify om/IRender (render [_]
     (dom/div #js {:id "test-container"}
