@@ -10,8 +10,8 @@
     (let [cur-view (first (:current-tab cursor))
           tabs (:tab-list cursor)
           num-tabs (count tabs)]
-    (dom/div nil
-        (dom/div #js {:className "tab-bar"}
+    (dom/div #js {:className "tab-view"}
+        (dom/div #js {:className "tab-bar hidden-div"}
           (for [i (range 0 num-tabs)]
             (dom/button
             (if (= cur-view i)

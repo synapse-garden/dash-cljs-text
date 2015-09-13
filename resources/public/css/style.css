@@ -18,7 +18,7 @@
 /****************/
 
 *{
-  -webkit-transition: all 0.1s ease-out;
+  -webkit-transition: all 0.1s ease;
   outline-offset: -1px;
 }
 
@@ -91,16 +91,20 @@ a {
 
 div{
   outline: solid 1px #444;
-  margin: 32px;
-  padding: 32px;
+  margin: 16px;
+  padding: 16px;
 }
+div:hover{ outline-color: #505050; }
 
 div .hidden-div{
   margin: 0px;
   padding: 0px;
   outline: none;
 }
-div:hover{ outline-color: #555; }
+div .nomargin-div{ margin: 0px; }
+div .nopadding-div{ padding: 0px; }
+
+div .hidden-div>div{ background: none; }
 
 /*div,
 div>div>div,
@@ -185,7 +189,7 @@ button{
   background: #222;
   margin: 4px 4px;
 
-  transition-duration: 0.2s;
+  transition-duration: 0.1s;
 }
 
 button:hover, input:focus{
@@ -281,24 +285,23 @@ button:active {
 /* Tab Styling */
 /***************/
 
-.tab-bar{
-  margin: 0px -32px;
-  padding: 0px;
-  outline: 0px;
-}
+.tab-bar{  }
+.tab-bar:hover{  }
+
 .tab{
-  margin: -32px 0px 16px 0px;
-  outline: 1px solid #444;
+  margin: 0px;
+  outline: 1px solid #222;
   outline-offset: -1px;
-  background: #1c1c1c;
+  background: #202020;
   color: #666;
   text-align: center;
+  transition-duration: 0.5s;
 }
 
 .tab:hover{
   color: #888;
   background: #222;
-  outline-color: #666;
+  outline-color: #404040;
 }
 
 .tab:first-child{  }
@@ -306,11 +309,11 @@ button:active {
 
 .tab:disabled{
   color: #0fc;
-  outline: 4px double #096;
-  outline-offset: -5px;
+  outline: 3px double #096;
+  outline-offset: -4px;
   background: #2c2c2c;
 }
-.tab:disabled:hover{ outline: 4px double #097; }
+.tab:disabled:hover{ outline: 3px double #097; }
 
 .numtabs-1 { width: 100%; }
 .numtabs-2 { width: 50%; }
@@ -320,6 +323,8 @@ button:active {
 .numtabs-6 { width: 16.6666%; }
 .numtabs-7 { width: 14.2858%; }
 .numtabs-8 { width: 12.5% }
+
+.tab-view{ padding: 0px;}
 
 /*******************/
 /* End Tab Styling */
@@ -335,7 +340,6 @@ button:active {
   margin-bottom: 32px;
   padding: 5px 0px;  
   background: #1a1a1a;
-  outline: solid 1px #444;
   max-height: 64px;
   text-align: center;
 }
