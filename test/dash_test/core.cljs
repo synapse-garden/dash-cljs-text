@@ -9,7 +9,9 @@
     (iterate inc 1)))
 
 (defn refresh-tests! [state]
-  "Refreshes the state atom with new tests and updated refresh counter."
-  (swap! state (fn [s] (assoc s
-                         :reload-count (inc (:reload-count s))
-                         :all-tests (mapv #(assoc % :tests (insert-ids (:tests %))) (tests/tests))))))
+  "Refreshes the state cursor with new tests and updated refresh counter."
+  (let [reloads (inc (:reload-count @state))
+        all-tests (tests/tests)
+        new-tests (mapv #(assoc % :tests (insert-ids (:tests %))) all-tests)]
+    (swap! state assoc :reload-count reloads
+                       :tests new-tests)))
