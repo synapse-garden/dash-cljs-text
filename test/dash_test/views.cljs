@@ -8,8 +8,7 @@
   (reify
     om/IRender (render [_]
       (let [{:keys [id should test-fn should-be raw-fn args]} test-case
-            test-fn #(mapv test-fn %)
-            result (test-fn args)]
+            result (util/run-test test-fn args)]
         (dom/div
          (if (= should-be result)
            #js {:className "passed"}
