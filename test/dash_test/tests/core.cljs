@@ -3,7 +3,8 @@
 
 (def tests
   [{:should "retrieve a test map"
-    :test-fn dash-core/fetch-updates! ;#(mapv (fn [v] (apply dash-core/fetch-updates! v)) %)
+    :test-fn dash-core/fetch-updates!
+    :needs-cursor true
     :args [["http://localhost:3449/test/get-data"]
            ["http://localhost:3449/test/get-data"]]
     :should-be [{:data "data" :user "mf" :pass "pw"}

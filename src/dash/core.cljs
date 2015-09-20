@@ -2,6 +2,7 @@
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [dash.util :as dash-util]
             [clojure.string :as string]
+            [om.core :as om :include-macros true]
             [cljs.reader :as reader]
             [goog.events :as events]
             [cljs.core.async :as async :refer [put! chan <!]]
@@ -18,16 +19,17 @@
   "Insert or update a task in the given atom."
   (upsert-item state task :lists))
 
-(defn- update! [state]
+(defn- update! [state korks]
   (fn [result]
-    (reset! state result)))
+    (om/transact! state korks (fn [_] result))))
 
 (defn- err [{:keys [status status-text]}]
     (.log js/console (str "http request error: " status " " status-text)))
 
-(defn fetch-updates! [uri state]
-  "Return the map with any pending updates applied."
+(defn fetch-updates! [uri korks state]
+  "Return the map with any pending updates applied in the state at the
+  set of keys korks e.g. [:data :user]."
     (GET uri
-         :handler (update! state)
+         :handler (update! state korks)
          :response-format (ajax/transit-response-format)
          :error-handler err))
