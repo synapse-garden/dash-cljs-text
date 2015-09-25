@@ -24,7 +24,10 @@
     (om/transact! state korks (fn [_] result))))
 
 (defn- err [{:keys [status status-text]}]
-    (.log js/console (str "http request error: " status " " status-text)))
+  (do
+    (.log js/console "http request error: ")
+    (.log js/console "    status: " status-text)
+    (js/alert (str "HTTP request error: " status-text))))
 
 (defn fetch-updates! [uri korks state]
   "Return the map with any pending updates applied in the state at the

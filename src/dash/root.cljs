@@ -7,16 +7,16 @@
 
 (enable-console-print!)
 
-(defonce app-state (atom {:reload-count 0}))
+(defonce app-state (atom {}))
 (def backend "http://localhost:3449/test/")
 
-(swap! app-state #(assoc % :reload-count (inc (:reload-count %))))
-
 (om/root
- dash-views/lists-view
+ ;dash-views/lists-view
+ dash-views/data-view
  app-state
  {:target (. js/document (getElementById "dash"))})
 
-;(swap! app-state #((dash-core/fetch-updates "http://localhost:3449/test/test-data" %)))
-(dash-core/fetch-updates! (util/uri backend "test-data") app-state)
-; (swap! app-state #(dash-core/fetch-updates! (util/uri backend "test-data") %))
+(dash-core/fetch-updates!
+ (util/uri backend "get-data")
+ :app
+ (om/root-cursor app-state))

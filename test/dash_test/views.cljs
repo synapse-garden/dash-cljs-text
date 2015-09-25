@@ -3,28 +3,6 @@
             [om.dom :as dom :include-macros true]
             [dash-test.util :as util]))
 
-(defn cursor-test [test-case owner]
-  (reify
-    om/IRender (render [_]
-      (let [{:keys [id should test-fn ran-test should-be raw-fn args results]} test-case
-            args (with-cursors args)]
-        (do
-          (if-not ran-test
-            (do
-              (util/run-test! test-fn args)
-              (om/update! test-case :ran-test true)))
-          (dom/div
-           (if (= should-be results)
-             #js {:className "passed"}
-             #js {:className "failed"})
-           (dom/h3 #js {:className "test-name"} (str "Test " id))
-           (dom/h2 #js {:className "test-desc"} (str raw-fn " should " should))
-           (dom/ul nil
-                   ;(dom/li #js {:className "test-fn"} (str "Tests " raw-fn))
-            (if args (dom/li #js {:className "test-args"} (str "Input — " args)) "")
-              (dom/li #js {:className "test-result"} (str "Output — " results))
-              (dom/li #js {:className "test-should-be"} (str "Expected Output — " should-be)))))))))
-
 (defn no-cursor-test [test-case owner]
   (reify
     om/IRender (render [_]
@@ -46,9 +24,7 @@
   "test-view renders a single test div with class 'passed or 'failed."
   (reify
     om/IRender (render [_]
-      (if (:needs-cursor test-case)
-        (om/build cursor-test test-case)
-        (om/build no-cursor-test test-case)))))
+      (om/build no-cursor-test test-case))))
 
 (defn tests-view [nsp-tests owner]
   "tests-view renders a vector of test maps.  Each should have a :nsp string
