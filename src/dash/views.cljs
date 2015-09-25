@@ -21,8 +21,7 @@
                      date)
                     (dom/div #js {:className "info-timedue"}
                      timedue)
-                     ))) tasks)
-        ))))))
+                     ))) tasks)))))))
 
 (defn lists-view [app owner]
   (reify
@@ -30,5 +29,10 @@
       (dom/div #js {:id "lists-view"}
         (dom/h2 #js {:id "lists-view_title"} (str (:user app) "'s Todo Lists"))
         (apply dom/div #js {:className "list-view"}
-          (om/build-all list-view (:lists app))
-      )))))
+          (om/build-all list-view (:lists app)))))))
+
+(defn data-view [app owner]
+  "A simple root Om view which renders the given app atom."
+  (reify
+    om/IRender (render [_]
+      (dom/div nil (str @app)))))

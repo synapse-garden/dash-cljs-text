@@ -11,19 +11,21 @@
                  [ring/ring-core "1.4.0"]
                  [ring/ring-jetty-adapter "1.4.0"]
                  [cheshire "5.5.0"]
-                 [figwheel "0.3.9"]
+                 [figwheel "0.4.0"]
                  [org.omcljs/om "0.9.0"]
                  [cljs-ajax "0.3.14"]
+                 [lein-light-nrepl "0.2.0"]
                  [com.cognitect/transit-cljs "0.8.220"]
                  [com.cognitect/transit-clj "0.8.281"]]
 
   :plugins [[lein-cljsbuild "1.1.0"]
-            [lein-figwheel "0.3.9"]
+            [lein-figwheel "0.4.0"]
             [lein-ring "0.9.6"]]
 
   :clean-targets ^{:protect false} ["resources/public/out"
                                     "resources/public/test_out"
                                     "resources/public/script"
+                                    "build"
                                     "target"]
 
   :cljsbuild {
@@ -59,6 +61,9 @@
 
   :figwheel {
              :server-port 3449
+             :nrepl-port 3450
+             :nrepl-middleware ["cemerick.piggieback/wrap-cljs-repl"
+                                "lighttable.nrepl.handler/lighttable-ops"]
              :ring-handler server.handler/test-app
              :css-dirs ["resources/public/css"]})
 
