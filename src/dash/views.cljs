@@ -15,7 +15,7 @@
     (let []
     (dom/div nil
       (dom/h1 nil "Canvas Graph")
-      (canvas/start-sketch cursor)
+      (canvas/start-sketch)
       (dom/canvas #js {:id "canvas-test" :className "canvas-graph" :width 640 :height 256})
       (dom/h4 nil "If this viewport is black and blank, reload the page!")
     )))))
