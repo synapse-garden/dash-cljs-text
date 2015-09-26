@@ -16,7 +16,8 @@
                  [cljs-ajax "0.3.14"]
                  [lein-light-nrepl "0.2.0"]
                  [com.cognitect/transit-cljs "0.8.220"]
-                 [com.cognitect/transit-clj "0.8.281"]]
+                 [com.cognitect/transit-clj "0.8.281"]
+                 [com.cemerick/piggieback "0.2.1"]]
 
   :plugins [[lein-cljsbuild "1.1.0"]
             [lein-figwheel "0.4.0"]
