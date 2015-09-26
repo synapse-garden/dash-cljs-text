@@ -118,7 +118,7 @@
 
     	))
 
-(defn start-sketch [cursor]
+(defn start-sketch []
 	;(sample-data [(om/ref-cursor (:name (om/root-cursor app-state)))])
 	(q/sketch
 		:host "canvas-test"
