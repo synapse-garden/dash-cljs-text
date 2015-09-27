@@ -29,13 +29,6 @@
     (.log js/console "    status: " status-text)
     (js/alert (str "HTTP request error: " status-text))))
 
-(defn ok-handler [state]
-  (fn [result]
-    (reset! state result)))
-
-(defn error-handler [{:keys [status status-text]}]
-    (.log js/console (str "http request error: " status " " status-text)))
-
 (defn fetch-updates! [uri korks state]
   "Return the map with any pending updates applied in the state at the
   set of keys korks e.g. [:data :user]."
