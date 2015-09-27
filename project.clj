@@ -62,6 +62,7 @@
   :figwheel {
              :server-port 3449
              :nrepl-port 3450
+             :repl true
              :nrepl-middleware ["lighttable.nrepl.handler/lighttable-ops"]
              :ring-handler server.handler/test-app
              :css-dirs ["resources/public/css"]})
