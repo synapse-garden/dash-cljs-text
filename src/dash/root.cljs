@@ -18,5 +18,4 @@
 
 (dash-core/fetch-updates!
  (util/uri backend "get-data")
- :app
  (om/root-cursor app-state))

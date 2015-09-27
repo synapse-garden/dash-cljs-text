@@ -21,7 +21,7 @@
 
 (defn- update! [state korks]
   (fn [result]
-    (om/transact! state korks (fn [_] result))))
+    (om/transact! state korks (fn [m] (merge m result)))))
 
 (defn- err [{:keys [status status-text]}]
   (do
@@ -29,7 +29,7 @@
     (.log js/console "    status: " status-text)
     (js/alert (str "HTTP request error: " status-text))))
 
-(defn fetch-updates! [uri korks state]
+(defn fetch-updates! [uri state & korks]
   "Return the map with any pending updates applied in the state at the
   set of keys korks e.g. [:data :user]."
     (GET uri
