@@ -11,7 +11,7 @@
 (defn refresh-tests! [state]
   "Refreshes the state cursor with new tests and updated refresh counter."
   (let [reloads (inc (:reload-count @state))
-        all-tests (tests/tests)
+        all-tests tests/tests
         new-tests (mapv #(assoc % :tests (insert-ids (:tests %))) all-tests)]
     (swap! state assoc :reload-count reloads
                        :tests new-tests)))
