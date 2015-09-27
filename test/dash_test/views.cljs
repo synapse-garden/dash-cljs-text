@@ -14,18 +14,18 @@
           #js {:className "failed"})
         (dom/h3 #js {:className "test-name"} (str "Test " id " — " raw-fn))
           (dom/h2 #js {:className "test-desc"} (str "Should " should))
-          (dom/img (if (= should-be (test-fn args))
+          (dom/img (if (= should-be results)
             #js {:src "img/check.png" :className "status-image"}
             #js {:src "img/x.png" :className "status-image"}))
 
         (dom/table #js {:className "test-table"}
-          (if args 
+          (if args
           (dom/tr #js {:className "test-row"}
            (dom/td #js {:className "test-row-title"} "Input")
            (dom/td #js {:className "test-row-data"} args)))
           (dom/tr #js {:className "test-row"}
            (dom/td #js {:className "test-row-title"} "Output")
-           (dom/td #js {:className "test-row-data"} (test-fn args)))
+           (dom/td #js {:className "test-row-data"} results))
           (dom/tr #js {:className "test-row"}
            (dom/td #js {:className "test-row-title"} "Expected")
            (dom/td #js {:className "test-row-data"} should-be))))))))

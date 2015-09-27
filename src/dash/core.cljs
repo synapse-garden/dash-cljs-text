@@ -36,9 +36,10 @@
 (defn error-handler [{:keys [status status-text]}]
     (.log js/console (str "http request error: " status " " status-text)))
 
-(defn fetch-updates [uri state]
-  "Return the map with any pending updates applied."
+(defn fetch-updates! [uri korks state]
+  "Return the map with any pending updates applied in the state at the
+  set of keys korks e.g. [:data :user]."
     (GET uri
-         :handler (ok-handler state)
+         :handler (update! state korks)
          :response-format (ajax/transit-response-format)
-         :error-handler error-handler))
+         :error-handler err))

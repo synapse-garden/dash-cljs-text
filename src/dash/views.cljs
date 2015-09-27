@@ -20,17 +20,11 @@
       (dom/h4 nil "If this viewport is black and blank, reload the page!")
     )))))
 
-(defn root-view [cursor owner]
-  (reify om/IRender (render [_]
-    (dom/div #js {:id "test-container"}
-      (dom/h3 nil "Login Test View")
-      (om/build login-view ())))))
-
 (defn list-view [this-list owner]
   (reify
     om/IRender (render [_]
       (let [{:keys [list-name tasks]} this-list]
-        (dom/div #js {:id (str "list-" (dash-util/name-as-id list-name))}
+        (dom/div #js {:id (str "list-" (util/name-as-id list-name))}
           (dom/h3 #js {:className "list-title"} (str list-name))
           (apply dom/ul #js {:className "list-contents"}
             (map
