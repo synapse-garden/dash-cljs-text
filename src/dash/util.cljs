@@ -27,6 +27,12 @@
         nil
         (first (last words))))))
 
+(defn pluralize [word number]
+  "Takes a word and makes it plural, if appropriate"
+  (if (> number 1)
+    (str word "s")
+    word))
+
 (defn uri [root path]
   "Construct a URI given a root and path"
   (str root path))
