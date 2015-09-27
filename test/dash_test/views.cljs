@@ -58,7 +58,7 @@
   (reify
     om/IRender (render [_]
       (let [all (:tests all-tests)
-            num-views (count all-tests)]
+            num-views (count all)]
         (apply dom/div #js {:className "ns-views"}
           (dom/h3 #js {:id "test-title"} (str "Tests View"" — " num-views (util/pluralize" Namespace" num-views)))
           (om/build-all tests-view all))))))
