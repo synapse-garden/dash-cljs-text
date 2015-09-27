@@ -29,6 +29,13 @@
     (.log js/console "    status: " status-text)
     (js/alert (str "HTTP request error: " status-text))))
 
+(defn upsert-view [state new-view]
+  "Change the view of the given atom"
+  ;(swap! state #(assoc % :view new-view))
+  (swap! state assoc :view [new-view])
+  ;(upsert-item state new-view :view)
+  )
+
 (defn fetch-updates! [uri state & korks]
   "Return the map with any pending updates applied in the state at the
   set of keys korks e.g. [:data :user]."

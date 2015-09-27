@@ -19,13 +19,19 @@
         some-object))))
 
 (defn abbreviate [some-name]
-  "Makes a two-letter uppercase string out of a name"
+  "Takes the first letter of each word and makes a new word out of it"
   (let [words (string/split (string/trim (string/upper-case some-name)) #"\s+")]
     (str
       (ffirst words)
       (if (= (alength (to-array words)) 1)
         nil
         (first (last words))))))
+
+(defn pluralize [word number]
+  "Takes a word and makes it plural, if appropriate"
+  (if (> number 1)
+    (str word "s")
+    word))
 
 (defn uri [root path]
   "Construct a URI given a root and path"
